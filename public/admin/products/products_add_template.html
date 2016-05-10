@@ -1,0 +1,124 @@
+<script type="text/ng-template" id="addNewFilePanel">
+    <form role="form" name="myForm">
+        <div class="panel panel-primary" style="padding: 10px 10px 10px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    文件上传
+                </h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <span>选择文件：</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="input-group">
+                            <input type="file" ngf-select ng-model="picFile" name="file"
+                                   accept="*" ngf-max-size="20MB" required
+                                   ngf-model-invalid="errorFile">
+                        </div><!-- /input-group -->
+                    </div>
+                </div><!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <span>备注：</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="input-group">
+                            <textarea class="form-control" rows="3" cols="35" ng-model="commitOfFile"></textarea>
+                        </div><!-- /input-group -->
+                    </div>
+                </div><!-- /.row -->
+
+                <div class="row">
+                    <i ng-show="myForm.file.$error.maxSize">文件过大
+                        {{errorFile.size / 1000|number:1}}MB: 最大允许2MB</i>
+                    <span ng-show="picFile.result">上传成功</span>
+                    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                </div>
+
+                <div class="row">
+                    <div class="progress" ng-show="myForm.$valid">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="100"
+                             aria-valuemin="0" aria-valuemax="100" style="width:{{picFile.progress}}%">
+                            <span class="sr-only">{{picFile.progress}}%完成</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="panel-footer" align="right">
+                <button class="btn btn-primary" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile,commitOfFile)">上传</button>
+                <button type="button" class="btn btn-primary" ng-click="closeAddNewFile()">关闭</button>
+            </div>
+
+        </div>
+    </form>
+</script>
+
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <table>
+        <thead>
+        <th width="50%">编辑区</th>
+        <th width="50%">预览区</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <div>产品名称：</div>
+                <input ng-model="data.name" style="width:597px;"/>
+                <br/>
+                <span>选择产品图片</span>
+                <input type="file" ngf-select ng-model="picFile" name="file"
+                       accept="*" ngf-max-size="20MB" required
+                       ngf-model-invalid="errorFile">
+                <button class="btn btn-primary" ng-disabled="angular.isUndefined(picFile)"
+                        ng-click="uploadPic(picFile)">上传
+                </button>
+
+
+                <!--<button type="button" ng-class="btn-primary" ng-click="addProductPicture()">选择产品图片</button>-->
+                <!---->
+                <div>产品类别：</div>
+                <select name="productCategorySelect" id="idProductCategorySelect" ng-model="data.category">
+                    <option value="youxianyuan" selected>医学有限元分析</option>
+                    <option value="yiliaomoxing">3D高端打印医疗模型</option>
+                    <option value="taihejin">3D打印钛合金植入物</option>
+                </select><br>
+                <div>产品简介</div>
+                <textarea rows="8" cols="82" ng-model="data.productIntro" required></textarea>
+            </td>
+            <td>
+                <div class="col-md-6" id="fh5co-work">
+                    <!--<div>-->
+                        <!--<h2>{{data.name}}</h2>-->
+                        <!--<p><a href="http://localhost:3000/{{data.id}}/"><img class="wow animated fadeInUp animated animated" style="width:200px" src="http://localhost:3000/{{data.productPictureUrl}}" alt=""></a></p>-->
+                        <!--<div data-ng-bind-html="data.productIntro | sanitize"></div>-->
+                    <!--</div>-->
+
+                    <div>
+                        <a href="" class="fh5co-project-item image-popup to-animate fadeInUp animated">
+                            <img src="/{{data.productPictureUrl}}" alt="Image" class="img-responsive">
+                            <div class="fh5co-text">
+                                <h2>{{data.name}}</h2>
+                                <span>{{data.productIntro}}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+
+    <button ng-click="createProduct()" style="float:left" ng-class="btn-primary">
+        保存修改
+    </button>
+</div>

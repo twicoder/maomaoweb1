@@ -1,0 +1,13 @@
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div>修改产品案例信息</div>
+    <div>产品名称：</div>
+    <input ng-model="data.name" style="width:500px;" />
+    <br/>
+    <div>产品案例</div>
+    <textarea keditor ng-model="data.detail" data-config="config4productDetails"  required></textarea>
+    <button ng-click="updateProduct()"  ng-class="btn-primary">
+        保存
+    </button>
+
+</div>

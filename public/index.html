@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="productApp">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Test</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+
+    <link rel="stylesheet" href="/stylesheets/styles_old.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="/javascripts/jquery-1.11.1.min.js"></script>
+
+    <script src="/javascripts/angular.js"></script>
+    <script src="/javascripts/angular-resource.js"></script>
+    <script src="/javascripts/angular-route.js"></script>
+    <script src="/javascripts/controllers/site/app.js"></script>
+
+    <script type="text/javascript" src="/javascripts/jquery-1.11.1.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/javascripts/respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/javascripts/wow.min.js"></script>
+    <script type="text/javascript">new WOW().init();</script>
+
+</head>
+<body class="custom-background body-hp" ng-controller="productCtrl">
+<div ng-include="'partials/header.html'"></div>
+
+<div ng-view></div>
+
+<div ng-include="'partials/footer.html'"></div>
+</body>
+</html>

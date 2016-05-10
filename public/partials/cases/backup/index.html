@@ -1,0 +1,63 @@
+
+<!-- Container begin -->
+<div class="inner container container-hp"><!-- Column01 begin -->
+    <section id="fh5co-work" class="animated">
+        <div class="row show-grid row-bottom-padded-sm">
+
+            <div class="col-md-4">
+                <div align="center"><a href="#/cases/youxianyuan"><h3 class="subtitle">医学有限元分析</h3></a></div>
+                <br/>
+
+                <div ng-repeat="item in data.products | filter:{category: 'youxianyuan'}">
+                    <div class="row" data-ng-bind-html="item.shortintro | sanitize"></div>
+                    <a href="" class="fh5co-project-item image-popup to-animate fadeInUp animated">
+                        <img src="{{item.productPictureUrl}}" alt="Image" class="img-responsive">
+                        <div class="fh5co-text">
+                            <h2>{{item.name}}</h2>
+                            <span>{{item.productIntro}}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div align="center"><a href="#/cases/yiliaomoxing"><h3 class="subtitle">3D打印高端医疗模型</h3></a></div>
+
+                <br/>
+                <div ng-repeat="item in data.products | filter:{category: 'yiliaomoxing'}">
+                    <div class="row" data-ng-bind-html="item.shortintro | sanitize"></div>
+                    <a href="" class="fh5co-project-item image-popup to-animate fadeInUp animated">
+                        <img src="{{item.productPictureUrl}}" alt="Image" class="img-responsive">
+                        <div class="fh5co-text">
+                            <h2>{{item.name}}</h2>
+                            <span>{{item.productIntro}}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div align="center"><a href="#/cases/taihejin"><h3 class="subtitle">3D打印钛合金植入物</h3></a></div>
+                <br/>
+                <div ng-repeat="item in data.products | filter:{category: 'taihejin'}">
+                    <div class="row" data-ng-bind-html="item.shortintro | sanitize"></div>
+                    <a href="" class="fh5co-project-item image-popup to-animate fadeInUp animated">
+                        <img src="{{item.productPictureUrl}}" alt="Image" class="img-responsive">
+                        <div class="fh5co-text">
+                            <h2>{{item.name}}</h2>
+                            <span>{{item.productIntro}}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Column01 end -->
+    <div class="clearfix"></div>
+    <!-- FriendLink begin -->
+    <!-- FriendLink end -->
+</div>
+<!-- Container end -->

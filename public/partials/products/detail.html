@@ -1,0 +1,21 @@
+<div class="breadcrumb"><div class="inner">
+    <h2>
+        {{data.currentProduct.name}}        </h2>
+    <div class="crumb-box"><a id="hp" href="http://www.trandomed.com">首页</a> <i>&gt;</i><span class="current">{{data.currentProduct.name}}</span></div>
+</div></div>
+
+<div class="inner container">    <!-- Content Begin-->
+    <div class="column-fluid"><div class="content fullwidth inner">
+        <!-- Post begin -->
+        <article class="post">
+            <div class="entry">
+                <div data-ng-bind-html="data.currentProduct.detail | sanitize"></div>
+            </div>
+        </article>
+        <!-- Post end -->
+    </div></div>
+    <!-- Content end-->
+    <div class="clearfix"></div>
+    <!-- FriendLink begin -->
+    <!-- FriendLink end -->
+</div>

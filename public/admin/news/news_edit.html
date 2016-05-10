@@ -1,0 +1,24 @@
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div>修改产品</div>
+    <div>产品名称：</div>
+    <input ng-model="data.name" style="width:500px;" />
+    <br/>
+    <div>产品类别：</div>
+    <select name="productCategorySelect" id="idProductCategorySelect" ng-model="data.category">
+        <option value="youxianyuan">医学有限元分析</option>
+        <option value="yiliaomoxing">3D高端打印医疗模型</option>
+        <option value="taihejin">3D打印钛合金植入物</option>
+    </select><br>
+    <div>产品简介</div>
+    <textarea rows="4" cols="140" ng-model="data.shortintro" required></textarea>
+    <div>产品案例</div>
+    <textarea keditor ng-model="data.detail" data-config="config4productDetails"  required></textarea>
+
+
+    <button ng-click="updateProduct()" style="float:right" ng-class="btn-primary">
+        更新产品信息
+    </button>
+
+
+</div>

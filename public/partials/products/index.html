@@ -1,0 +1,101 @@
+
+<!-- Container begin -->
+<div class="inner container container-hp"><!-- Column01 begin -->
+    <section id="fh5co-work" class="animated">
+        <div class="row show-grid row-bottom-padded-sm">
+
+            <div class="col-md-4">
+                <div align="center"><a href="#/cases/youxianyuan"><h3 class="subtitle">医学有限元分析</h3></a></div>
+                <br/>
+
+                <div ng-repeat="item in data.products | filter:{category: 'youxianyuan'}">
+                    <div class="row" data-ng-bind-html="item.shortintro | sanitize"></div>
+                    <a href="" class="fh5co-project-item image-popup to-animate fadeInUp animated">
+                        <img src="{{item.productPictureUrl}}" alt="Image" class="img-responsive">
+                        <div class="fh5co-text">
+                            <h2>{{item.name}}</h2>
+                            <span>{{item.productIntro}}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div align="center"><a href="#/cases/yiliaomoxing"><h3 class="subtitle">3D打印高端医疗模型</h3></a></div>
+
+                <br/>
+                <div ng-repeat="item in data.products | filter:{category: 'yiliaomoxing'}">
+                    <div class="row" data-ng-bind-html="item.shortintro | sanitize"></div>
+                    <a href="" class="fh5co-project-item image-popup to-animate fadeInUp animated">
+                        <img src="{{item.productPictureUrl}}" alt="Image" class="img-responsive">
+                        <div class="fh5co-text">
+                            <h2>{{item.name}}</h2>
+                            <span>{{item.productIntro}}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div align="center"><a href="#/cases/taihejin"><h3 class="subtitle">3D打印钛合金植入物</h3></a></div>
+                <br/>
+                <div ng-repeat="item in data.products | filter:{category: 'taihejin'}">
+                    <div class="row" data-ng-bind-html="item.shortintro | sanitize"></div>
+                    <a href="" class="fh5co-project-item image-popup to-animate fadeInUp animated">
+                        <img src="{{item.productPictureUrl}}" alt="Image" class="img-responsive">
+                        <div class="fh5co-text">
+                            <h2>{{item.name}}</h2>
+                            <span>{{item.productIntro}}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Column01 end -->
+
+    <section class="row-fluid">
+        <div class="column-fluid">
+            <div class="content">
+                <div class="newslist">
+                    <h2><i><a href="#/news/">新闻动态</a></i><em>COMPANY NEWS</em></h2>
+                    <ul>
+                        <li class="t">
+                            <a href="#/news/{{data.news[0]._id}}"><img src="/{{data.news[0].newsPictureUrl}}" alt="{{data.news[0].title}}" class="homenewsthumb"></a>
+                            <h3><a href="#/news/{{data.news[0]._id}}" title="{{data.news[0].title}}">{{data.news[0].title}}</a></h3>
+                            <p>
+                                {{data.news[0].shortIntro | sanitize}}
+                            </p>
+                        </li>
+
+                    </ul>
+                    <ul ng-repeat="item in data.news.slice(1)">
+                        <li><span>{{item.updatedAt}}</span><a href="#/news/{{item._id}}" title="{{item.title}}">{{item.title}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Contact begin -->
+        <div class="row-bar">
+            <h2><i><a href="http://www.speedymaker.cn/about/contact/">联系我们</a></i><em>CONTACT US</em></h2>
+
+            <div>
+                <p><img title="联系我们" src="images/contact-us.jpg" alt="联系我们"></p>
+                <p class="i_tel"><em>电 话：</em>0574-58967218</p>
+                <p class="i_fax"><em>传 真：</em>0574-58967218</p>
+                <p class="i_add"><em>地 址：</em>宁波市杭州湾新区滨海四路777号</p>
+
+            </div>
+        </div>
+        <!-- Contact end -->
+    </section>
+
+
+    <div class="clearfix"></div>
+    <!-- FriendLink begin -->
+    <!-- FriendLink end -->
+</div>
+<!-- Container end -->

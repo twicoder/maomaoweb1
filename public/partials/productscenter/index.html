@@ -1,0 +1,46 @@
+<div class="breadcrumb"><div class="inner">
+    <h2>
+        产品中心        </h2>
+    <div class="crumb-box"><a id="hp" href="http://www.trandomed.com">首页</a> <i>&gt;</i><span class="current">产品中心</span></div>
+</div></div>
+
+<div class="inner container">    <!-- Content Begin-->
+    <div class="column-fluid"><div class="content">
+        <!-- CurrentPage begin -->
+        <h2 class="cur-title">
+            <a href="http://www.speedymaker.cn/category/news/" title="产品中心">产品中心</a>
+        </h2>        <!-- CurrentPage end -->
+        <!-- PostList begin -->
+        <ul class="piclist" ng-repeat="item in data.cases">
+            <li>
+                <a href="#/cases/{{item.category}}"><h2 class="subtitle">{{item.hanyuCategory}}</h2></a>
+                <div class="folio-item">
+                    <a href="#/cases/{{item.category}}">
+                    <div class="folio-thumb">
+                        <div class="mediaholder"><img src="/{{item.categoryPictureUrl}}" alt="phoenix touch" class="thumb"></div>
+                        <div class="opacity-pic"></div>
+                    </div>
+                    <h3>{{item.name}}</h3>
+                    </a>
+                </div>
+            </li>
+
+        </ul>
+        <!-- PostList end -->
+    </div></div>
+    <!-- Content end-->
+    <!-- Sidebar Begin-->
+    <aside class="sidebar">
+        <!-- Widgets begin -->
+        <ul>
+            <li>
+                <a href="#/about/about_contact"><img src="/images/contact.jpg" alt="联系我们" title="联系我们"></a>
+            </li>
+        </ul>
+        <!-- Widgets end -->
+    </aside>
+    <!-- Sidebar end-->
+    <div class="clearfix"></div>
+    <!-- FriendLink begin -->
+    <!-- FriendLink end -->
+</div>

@@ -1,0 +1,84 @@
+<script type="text/ng-template" id="addNewFilePanel">
+    <form role="form" name="myForm">
+        <div class="panel panel-primary" style="padding: 10px 10px 10px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    文件上传
+                </h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <span>选择文件：</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="input-group">
+                            <input type="file" ngf-select ng-model="picFile" name="file"
+                                   accept="*" ngf-max-size="20MB" required
+                                   ngf-model-invalid="errorFile">
+                        </div><!-- /input-group -->
+                    </div>
+                </div><!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <span>备注：</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="input-group">
+                            <textarea class="form-control" rows="3" cols="35" ng-model="commitOfFile"></textarea>
+                        </div><!-- /input-group -->
+                    </div>
+                </div><!-- /.row -->
+
+                <div class="row">
+                    <i ng-show="myForm.file.$error.maxSize">文件过大
+                        {{errorFile.size / 1000|number:1}}MB: 最大允许2MB</i>
+                    <span ng-show="picFile.result">上传成功</span>
+                    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                </div>
+
+                <div class="row">
+                    <div class="progress" ng-show="myForm.$valid">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="100"
+                             aria-valuemin="0" aria-valuemax="100" style="width:{{picFile.progress}}%">
+                            <span class="sr-only">{{picFile.progress}}%完成</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="panel-footer" align="right">
+                <button class="btn btn-primary" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile,commitOfFile)">上传</button>
+                <button type="button" class="btn btn-primary" ng-click="closeAddNewFile()">关闭</button>
+            </div>
+
+        </div>
+    </form>
+</script>
+
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div>添加新闻</div>
+    <div>新闻标题：</div>
+    <input ng-model="data.title" style="width:500px;" />
+    <br/>
+    <div>新闻简介：</div>
+    <textarea rows="8" cols="82" ng-model="data.shortIntro" required></textarea>
+    <br/>
+    <span>选择新闻图片</span>
+    <input type="file" ngf-select ng-model="picFile" name="file"
+           accept="*" ngf-max-size="20MB" required
+           ngf-model-invalid="errorFile">
+    <button class="btn btn-primary" ng-disabled="angular.isUndefined(picFile)"
+            ng-click="uploadPic(picFile)">上传
+    </button>
+    <div>新闻内容</div>
+    <textarea keditor ng-model="data.content" data-config="config4newsDetails"  required></textarea>
+
+    <button ng-click="createNews()" ng-class="btn-primary">
+        保存
+    </button>
+</div>

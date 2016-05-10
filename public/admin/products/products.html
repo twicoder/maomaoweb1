@@ -1,0 +1,50 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">产品管理</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div>
+        <div class="btn-group pull-right">
+            <button type="button" ng-class="btn-primary" ng-click="addNewProduct()">添加产品</button>
+        </div>
+    </div>
+    <div>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th width="5%">ID</th>
+                <th width="45%">产品名称</th>
+                <th width="20%">产品类别</th>
+                <th width="30%">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in data.products">
+            <td>{{item._id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.hanyuCategory}}</td>
+            <td align="center">
+                <a href="#/products/products/{{item._id}}" class="btn btn-xs btn-primary" >
+                    修改产品
+                </a>
+                <a href="#/products/products/case/{{item._id}}" class="btn btn-xs btn-primary" >
+                    编辑案例
+                </a>
+                <a ng-click="deleteProduct(item._id)" class="btn btn-xs btn-warning" >
+                    删除产品
+                </a>
+            </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
+</div>

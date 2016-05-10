@@ -1,0 +1,38 @@
+<div class="breadcrumb"><div class="inner">
+    <h2>
+        新闻动态        </h2>
+    <div class="crumb-box"><a id="hp" href="http://www.trandomed.com">首页</a> <i>&gt;</i><span class="current">新闻动态</span></div>
+</div></div>
+
+<div class="inner container">    <!-- Content Begin-->
+    <div class="column-fluid"><div class="content">
+        <!-- CurrentPage begin -->
+        <h2 class="cur-title">
+            <a href="http://www.speedymaker.cn/category/news/" title="新闻动态">新闻动态</a>
+        </h2>        <!-- CurrentPage end -->
+        <!-- PostList begin -->
+        <ul class="postlist">
+            <li ng-repeat="item in data.news">
+                <a href="#/news/{{item._id}}">{{item.title}}</a>
+                <span>{{item.updatedAt}}</span>
+            </li>
+
+        </ul>
+        <!-- PostList end -->
+    </div></div>
+    <!-- Content end-->
+    <!-- Sidebar Begin-->
+    <aside class="sidebar">
+        <!-- Widgets begin -->
+        <ul>
+            <li>
+                <a href="#/about/about_contact"><img src="/images/contact.jpg" alt="联系我们" title="联系我们"></a>
+            </li>
+        </ul>
+        <!-- Widgets end -->
+    </aside>
+    <!-- Sidebar end-->
+    <div class="clearfix"></div>
+    <!-- FriendLink begin -->
+    <!-- FriendLink end -->
+</div>

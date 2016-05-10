@@ -1,0 +1,12 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div>添加新闻</div>
+    <div>新闻标题：</div>
+    <input ng-model="data.title" style="width:500px;" />
+    <br/>
+    <div>新闻内容</div>
+    <textarea keditor ng-model="data.content" data-config="config4productDetails"  required></textarea>
+
+    <button ng-click="createNews()" ng-class="btn-primary">
+        保存
+    </button>
+</div>
